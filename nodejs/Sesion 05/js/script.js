@@ -11,23 +11,25 @@
 // });
 
 
-    // Usar WriteFile con Async/ await
+   // Usar WriteFile con Async/ await
 
-// const fs = require('fs').promises;
+const fs = require('fs').promises;
 
-// async function crearArchivo(nombre,contenido) {
-// 	try{
-// 		await fs.writeFile(nombre, contenido);
-// 		console.log('archivo creado correctamente');
-// 	}	catch (error) {
-// 		console.log(error);
-// 	}
-// }
+async function crearArchivo(nombre,contenido) {
+	try{
+		await fs.writeFile(nombre, contenido);
+		console.log('archivo creado correctamente');
+	}	catch (error) {
+		console.log(error);
+	}
+}
+
+
 
 
 // usar Writefile (oscar)
 
-const fs = require('fs');// acceder a metodos que no usan callback sino promises
+const fs = require('fs/promises');// acceder a metodos que no usan callback sino promises
 
 const encoding = 'utf8';
 
@@ -37,44 +39,45 @@ async function crearArchivo(nombre, contenido) {
 	console.log(result);
 	console.log('archivo creado')
 }
-crearArchivo()
+crearArchivo('manuel', 'hola koders')
 
 // Ejercicio
 
 
 
 //Funcion Update
-async function updateFile(archivo, nuevoContenido) {
-	if (error) {
-		console.log('eror')
-	} else {
-	const result = await fs.appendFile(archivo, nuevoContenido, (error))
-	console.log(`${nuevoContenido} ha sido agregado a ${archivo}`)
-	console.log(result)
-	}
-}
+// async function updateFile(archivo, nuevoContenido) {
+// 	try {
+// 		const result = await fs.appendFile(archivo, nuevoContenido, (error))
+// 	console.log(`${nuevoContenido} ha sido agregado a ${archivo}`)
+// 	console.log(result)
+// 	}
+// 	catch {
+// 		console.log(error)
+// 	}
+// }
 
-updateFile();
+// updateFile();
 
-//funcion read 
-async function readFile(archivo) {
-	if (error) {
-		console.log('eror')
-	} else {
-	const result = await fs.readFile(archivo)
-	console.log(result) 
-	}
-}	
-readFile()
+// //funcion read 
+// async function readFile(archivo) {
+// 	if (error) {
+// 		console.log('eror')
+// 	} else {
+// 	const result = await fs.readFile(archivo)
+// 	console.log(result) 
+// 	}
+// }	
+// readFile()
 
-//funcion Delete
-async function borrar (archivo) {
-	const result = await	fs.unlink (archivo, encoding)
-	if (error) {
-		console.log('eror')
-	} else {
-		console.log('archivo eliminado')
-	}
-}
-borrar()
+// //funcion Delete
+// async function borrar (archivo) {
+// 	const result = await	fs.unlink (archivo, encoding)
+// 	if (error) {
+// 		console.log('eror')
+// 	} else {
+// 		console.log('archivo eliminado')
+// 	}
+// }
+// borrar()
 
