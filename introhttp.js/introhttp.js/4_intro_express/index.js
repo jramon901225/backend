@@ -25,3 +25,13 @@ app.put('/',(req, res) => {
 app.listen(port, () => {
     console.log(`example app listening at http://localhost:${port}`)
 })
+
+
+const createDocument = async (name, content) => {
+    try {
+      await fs.writeFile(name, content, encoding)
+      console.log('Archivo creado con exito')
+    } catch (error) {
+      console.log(error)
+    }
+  }
